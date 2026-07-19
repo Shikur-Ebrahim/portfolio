@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Contact {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  phone      String?
+  company    String?
+  subject    String
+  message    String
+  created_at DateTime @default(now())
+}
+
+model Newsletter {
+  id         String   @id @default(cuid())
+  email      String   @unique
+  created_at DateTime @default(now())
+}
+
+model Project {
+  id           String   @id @default(cuid())
+  title        String
+  slug         String   @unique
+  description  String
+  image        String
+  technologies String[]
+  live_url     String?
+  github_url   String?
+  featured     Boolean  @default(false)
+  created_at   DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  client_name String
+  company     String?
+  position    String?
+  message     String
+  rating      Int      @default(5)
+  image       String?
+  approved    Boolean  @default(false)
+  created_at  DateTime @default(now())
+}
