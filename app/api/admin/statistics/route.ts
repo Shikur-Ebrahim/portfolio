@@ -1,4 +1,4 @@
-import { NextResponse } from "next";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY;
