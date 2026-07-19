@@ -6,7 +6,9 @@ export const contactSchema = z.object({
   phone: z.string().optional(),
   company: z.string().optional(),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(20, "Message must be at least 20 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  budget: z.string().optional(),
+  project_type: z.string().optional(),
 });
 
 export const newsletterSchema = z.object({

@@ -9,14 +9,17 @@ datasource db {
 }
 
 model Contact {
-  id         String   @id @default(cuid())
-  name       String
-  email      String
-  phone      String?
-  company    String?
-  subject    String
-  message    String
-  created_at DateTime @default(now())
+  id           String   @id @default(cuid())
+  name         String
+  email        String
+  phone        String?
+  company      String?
+  subject      String
+  message      String
+  budget       String?
+  project_type String?
+  status       String   @default("pending") // pending, in_progress, completed, rejected
+  created_at   DateTime @default(now())
 }
 
 model Newsletter {

@@ -208,6 +208,17 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-2">
+                      <Label htmlFor="budget">Budget (Optional)</Label>
+                      <Input id="budget" placeholder="e.g. 5,000 ETB" {...register("budget")} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="project_type">Project Type (Optional)</Label>
+                      <Input id="project_type" placeholder="e.g. E-Commerce" {...register("project_type")} />
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject *</Label>
                     <Input
